@@ -1,19 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\Weapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\Chaser\EnemyChaser.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\Projectile.cs" Line="17" Column="3" />
-      <File FileName="Assets\Scripts\Player\PlayerBot.cs" Line="130" Column="78" />
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="46" Column="71" />
+      <File FileName="Assets\Scripts\Weapons\Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PlayerBot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\VFX\AutoDestroyParticleSystem.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\PlayerCam.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Utility\SimpleRotate.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Environment\PointOfInterest.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\TestBlaster\TestBlaster.cs" Line="23" Column="103" />
+      <File FileName="Assets\Scripts\Weapons\TestBlaster\TestBlaster.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\TestBlaster\TestBlasterBolt.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DamageModule.cs" Line="38" Column="34" />
+      <File FileName="Assets\Scripts\DamageModule.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\Chaser\EnemyChaser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\Chaser\EnemyChaser.cs" Line="8" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
