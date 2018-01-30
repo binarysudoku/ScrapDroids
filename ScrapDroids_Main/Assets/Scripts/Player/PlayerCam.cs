@@ -1,43 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<doc>
-  <members>
-    <assembly>
-      <name>UnityEngine.TestRunner</name>
-    </assembly>
-    <member name="?:UnityEngine.TestTools.IMonoBehaviourTest">
-      <summary>
-        <para>A MonoBehaviour test needs to implement this interface.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEngine.TestTools.IMonoBehaviourTest.IsTestFinished">
-      <summary>
-        <para>Indicates when the test is considered finished.</para>
-      </summary>
-    </member>
-    <member name="?:UnityEngine.TestTools.IPrebuildSetup">
-      <summary>
-        <para>Interface for the method that implements the prebuild step.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.TestTools.IPrebuildSetup.Setup">
-      <summary>
-        <para>Setup method that is automatically called before the test run.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEngine.TestTools.LogAssert">
-      <summary>
-        <para>LogAssert allows you to expect Unity log messages that would normally cause the test to fail.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEngine.TestTools.LogAssert.ignoreFailingMessages">
-      <summary>
-        <para>Set this property to true to prevent unexpected error log messages from triggering an assertion. This property is set to false by default.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.TestTools.LogAssert.Expect(UnityEngine.LogType,System.String)">
-      <summary>
-        <para>Expect a log message of a specfic type. If an error, assertion or exception log is expected, the test will not fail. The test will fail if a log message is expected but does not appear.</para>
-      </summary>
-      <param name="type">Log type.</param>
-      <param name="message">Log message to expect.</param>
-    
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerCam : MonoBehaviour {
+
+	public GameObject playerBot;
+	public Transform mainCam;
+
+	public float camSpeed = 1f;
+	public float snapDistance = 20f;
+	public float snapBias = 0.5f;
+	public float aimOffsetDistance = 4f;
+	public float defaultZoom = 20f;
+
+	//internal variables
+	private Vector3 targetPoint;
+	private float currentZoom;
+	private GameObject currentPOI;
+	private Vector3 aimOffset;
+
+	// Use this for initialization
+	void Start () {
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+		aimOffset = new Vector3 (Input.GetAxis ("X Aim"), 0f, Input.GetAxis ("Z Aim"));
+
+		UpdateCamTarget ();
+
+		Debug.DrawRay (targetPoint, Vector3.up * 10, Color.green);
+
+		transform.position = Vector3.Lerp (transform.position, targetPoint, camSpeed);
+		mainCam.localPosition = Vector3.Lerp (mainCam.localPosition, -1 * mainCam.forward * currentZoom, camSpeed);
+	}
+
+	void UpdateCamTarget() {
+
+		//iterate all weapons and pick the closest that is within attachRange
+		GameObject[] allPOIObjects = GameObject.FindGameObjectsWithTag("Point Of Interest");
+		currentPOI = GetClosestValidPOI (allPOIObjects);
+
+		if (currentPOI != null) {
+			Debug.DrawRay (currentPOI.transform.position, Vector3.up * 10, Color.red);
+
+			currentZoom = currentPOI.GetComponent<PointOfInterest> ().zoomDistance;
+
+			targetPoint = ((playerBot.transform.position + currentPOI.transform.position) * snapBias) + (aimOffset * aimOffsetDistance);
+		} else {
+			currentZoom = defaultZoom;
+
+			targetPoint = playerBot.transform.position + (aimOffset * aimOffsetDistance);
+		}
+	}
+
+	GameObject GetClosestValidPOI(GameObject[] poiObjects)
+	{
+		GameObject bestTarget = null;
+		float closestDistanceSqr = Mathf.Infinity;
+		Vector3 currentPosition = playerBot.transform.position;
+		foreach(GameObject potentialTarget in poiObjects)
+		{
+			Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+			float dSqrToTarget = directionToTarget.sqrMagnitude;
+			if((dSqrToTarget < closestDistanceSqr) && (dSqrToTarget < snapDistance*snapDistance))
+			{
+				closestDistanceSqr = dSqrToTarget;
+				bestTarget = potentialTarget;
+			}
+		}
+		return bestTarget;
+	}
+}
