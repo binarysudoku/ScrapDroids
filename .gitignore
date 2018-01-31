@@ -1,6 +1,5 @@
-ScrapDroids_Main/Temp/**
-ScrapDroids_Main/Library/**
-ScrapDroids_Main/metadata/**
-ScrapDroids_Main/Assembly-CSharp-Editor.csproj
-ScrapDroids_Main/Assembly-CSharp.csproj
+ScrapDroids_Main/Temp/*
+ScrapDroids_Main/Library/*
+ScrapDroids_Main/metadata/*
+*.csproj
 *.log
