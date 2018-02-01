@@ -7,12 +7,12 @@ FBXHeaderExtension:  {
 	CreationTimeStamp:  {
 		Version: 1000
 		Year: 2018
-		Month: 1
-		Day: 31
-		Hour: 21
-		Minute: 10
-		Second: 42
-		Millisecond: 339
+		Month: 2
+		Day: 1
+		Hour: 1
+		Minute: 35
+		Second: 14
+		Millisecond: 316
 	}
 	Creator: "FBX SDK/FBX Plugins version 2018.1.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -28,20 +28,20 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Player\ScaleTest.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Player\ScaleTest.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Environment\ScaleTest.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Environment\ScaleTest.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "201800"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "31/01/2018 21:10:42.335"
-			P: "Original|FileName", "KString", "", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Player\ScaleTest.fbx"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "01/02/2018 01:35:14.315"
+			P: "Original|FileName", "KString", "", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Environment\ScaleTest.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "201800"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "31/01/2018 21:10:42.335"
-			P: "Original|ApplicationActiveProject", "KString", "", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Player"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "01/02/2018 01:35:14.315"
+			P: "Original|ApplicationActiveProject", "KString", "", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\ScrapDroids_Main\Assets\Meshes\Environment"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "E:\Users\Erinexx\Documents\GitHub\ScrapDroids\_AssetSource\Environment\MiningBase.mb"
 		}
 	}
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 57044607968, "", "Scene" {
+	Document: 140095619808, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -222,9 +222,9 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 57045030880, "Geometry::", "Mesh" {
+	Geometry: 139587594368, "Geometry::", "Mesh" {
 		Vertices: *24 {
-			a: -100.190322875977,0,100.354972839355,99.8096389770508,0,100.354972839355,-99.8096771240234,200,99.6450271606445,100.190361022949,200,99.6450271606445,-99.8096771240234,200,-100.354942321777,100.190361022949,200,-100.354942321777,-100.190322875977,0,-99.6450576782227,99.8096389770508,0,-99.6450576782227
+			a: -100.190322875977,0,100,99.8096389770508,0,100,-99.8096771240234,200,100,100.190361022949,200,100,-99.8096771240234,200,-100,100.190361022949,200,-100,-100.190322875977,0,-100,99.8096389770508,0,-100
 		} 
 		PolygonVertexIndex: *24 {
 			a: 0,1,3,-3,2,3,5,-5,4,5,7,-7,6,7,1,-1,1,7,5,-4,6,0,2,-5
@@ -239,7 +239,7 @@ Objects:  {
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
 			Normals: *72 {
-				a: 0,0.00354970525950193,0.999993681907654,0,0.00354970525950193,0.999993622303009,0,0.00354970525950193,0.999993681907654,0,0.00354970572516322,0.999993741512299,0,1,0,0,1,0,0,1,0,0,1,0,0,-0.00354940071702003,-0.999993741512299,0,-0.00354940071702003,-0.999993741512299,0,-0.00354940048418939,-0.999993622303009,0,-0.00354940048418939,-0.999993741512299,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0.999998152256012,-0.00190357188694179,0,0.999998152256012,-0.00190357177052647,0,0.999998152256012,-0.00190357188694179,0,0.999998211860657,-0.00190357177052647,0,-0.999998152256012,0.0019032726995647,0,-0.999998152256012,0.0019032726995647,0,-0.999998211860657,0.0019032726995647,0,-0.999998152256012,0.0019032726995647,0
+				a: 0,0,1,0,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,0,1,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0.999998211860657,-0.00190361007116735,0,0.999998211860657,-0.00190361007116735,0,0.999998211860657,-0.00190361007116735,0,0.999998211860657,-0.00190361007116735,0,-0.999998211860657,0.00190321926493198,0,-0.999998211860657,0.00190321926493198,0,-0.999998211860657,0.00190321926493198,0,-0.999998211860657,0.00190321926493198,0
 			} 
 			NormalsW: *24 {
 				a: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
@@ -295,7 +295,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 56632302000, "Model::ScaleTest", "Mesh" {
+	Model: 140094496880, "Model::ScaleTest", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationPivot", "Vector3D", "Vector", "",-100,0,-100
@@ -304,12 +304,13 @@ Objects:  {
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
 			P: "DefaultAttributeIndex", "int", "Integer", "",0
+			P: "Lcl Translation", "Lcl Translation", "", "A",100,0,500
 			P: "currentUVSet", "KString", "", "U", "map1"
 		}
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 56836128320, "Material::lambert1", "" {
+	Material: 140081174064, "Material::lambert1", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -332,11 +333,11 @@ Objects:  {
 Connections:  {
 	
 	;Model::ScaleTest, Model::RootNode
-	C: "OO",56632302000,0
+	C: "OO",140094496880,0
 	
 	;Geometry::, Model::ScaleTest
-	C: "OO",57045030880,56632302000
+	C: "OO",139587594368,140094496880
 	
 	;Material::lambert1, Model::ScaleTest
-	C: "OO",56836128320,56632302000
+	C: "OO",140081174064,140094496880
 }
