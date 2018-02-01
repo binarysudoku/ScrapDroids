@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Enemy\Chaser\EnemyChaser.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Environment\PointOfInterest.cs" />
+     <Compile Include="Assets\Scripts\Environment\YKill.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBot.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCam.cs" />
      <Compile Include="Assets\Scripts\Utility\SimpleRotate.cs" />

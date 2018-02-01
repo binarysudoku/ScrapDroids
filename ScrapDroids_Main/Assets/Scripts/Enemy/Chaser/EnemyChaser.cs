@@ -24,4 +24,6 @@ public class EnemyChaser : Enemy {
 			agent.isStopped = true;
 		}
 	}
+
+
 }
