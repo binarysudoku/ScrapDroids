@@ -38,15 +38,20 @@ public class Weapon : MonoBehaviour {
 		}
 
 		//TEMPORARY
-		Material mat = GetComponentInChildren<Renderer>().material;
-		mat.color = Color.	white * (ammo / (maxAmmo + 0.01f));
+
+		Renderer[] rends = GetComponentsInChildren<Renderer>();
+		Material mat;
+		for (int i = 0; i < rends.Length; i++) {
+			mat = rends[i].material;
+			mat.color = Color.white * (ammo / (maxAmmo + 0.01f));
+		}
 	}
 
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == "Enemy" && rb.velocity.magnitude > 4) {
 			DamageModule dmod = collision.transform.root.GetComponent<DamageModule> ();
 			Debug.Log (dmod);
-			dmod.takeDamage("Generic", massDamage);
+			dmod.TakeDamage("Generic", massDamage);
 			Debug.Log (dmod.currentHealth ());
 		}
 	}

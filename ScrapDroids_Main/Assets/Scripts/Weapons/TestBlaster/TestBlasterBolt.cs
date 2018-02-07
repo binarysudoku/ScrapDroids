@@ -7,18 +7,20 @@ public class TestBlasterBolt : Projectile {
 	public GameObject impactFX;
 	public LineRenderer traceFX;
 
+	public LayerMask hitMask;
+
 	public float traceFade;
 	public float defaultTraceWidth;
 	private float currentTraceWidth;
 	public bool alive;
-	
+
 	void Start () {
 		
 		RaycastHit hitData;
 
 		traceFX.SetPosition(0, transform.position);
 
-		if (Physics.Linecast (transform.position, transform.position + transform.forward * 10000, out hitData)) {
+		if (Physics.Linecast (transform.position, transform.position + transform.forward * 10000, out hitData, hitMask)) {
 			Instantiate (impactFX, hitData.point, Quaternion.LookRotation (hitData.normal));
 
 			traceFX.SetPosition (1, hitData.point);
@@ -26,7 +28,7 @@ public class TestBlasterBolt : Projectile {
 			DamageModule dmgmodule = hitData.transform.root.GetComponent<DamageModule> ();
 
 			if (dmgmodule != null) {
-				dmgmodule.takeDamage("Generic", damage);
+				dmgmodule.TakeDamage("Generic", damage);
 			}
 
 		} else {

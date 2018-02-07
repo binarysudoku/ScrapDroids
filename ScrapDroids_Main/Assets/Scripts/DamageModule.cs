@@ -33,7 +33,7 @@ public class DamageModule : MonoBehaviour {
 		}
 	}
 
-	public void takeDamage(string type, float dmg) {
+	public void TakeDamage(string type, float dmg) {
 		float mod = 1;
 		Debug.Log (dmg + " Damage * " + type);
 		DamageModifier.TryGetValue(type, out mod);

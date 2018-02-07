@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class FlameThrower : Weapon {
 
-	public GameObject projectile;
+	public GameObject oilProjectile;
+	public GameObject flameProjectile;
 
 	//vfx vars
 	public Transform muzzleFlashSocket;
-	public GameObject muzzleFlashFX;
+	public GameObject oilMuzzleFX;
+	public GameObject fireMuzzleFX;
 	public GameObject emptyFX;
-
+	
 	private float spinUp;
 
 	// Use this for initialization
@@ -32,9 +34,13 @@ public class FlameThrower : Weapon {
 			if (ammo > 0) {
 				ammo -= 1;
 
-				Instantiate (muzzleFlashFX, muzzleFlashSocket.position, muzzleFlashSocket.rotation, muzzleFlashSocket);
-
-				Instantiate (projectile, muzzleFlashSocket.position, muzzleFlashSocket.rotation);
+				if (spinUp < 0.5) {
+					Instantiate(oilMuzzleFX, muzzleFlashSocket.position, muzzleFlashSocket.rotation * Quaternion.Euler(0, -90, 0), null);
+					Instantiate(oilProjectile, muzzleFlashSocket.position, muzzleFlashSocket.rotation);
+				} else {
+					Instantiate(fireMuzzleFX, muzzleFlashSocket.position, muzzleFlashSocket.rotation, muzzleFlashSocket);
+					Instantiate(flameProjectile, muzzleFlashSocket.position, muzzleFlashSocket.rotation);
+				}
 			}
 		}
 	}

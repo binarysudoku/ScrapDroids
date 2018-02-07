@@ -8,7 +8,7 @@ public class YKill : MonoBehaviour {
 	void OnCollisionEnter(Collision col) {
 		Debug.Log ("AAAAAA");
 		if (col.gameObject.GetComponent<DamageModule> () != null) {
-			col.gameObject.GetComponent<DamageModule> ().takeDamage ("Generic", 100000);
+			col.gameObject.GetComponent<DamageModule> ().TakeDamage ("Generic", 100000);
 		}
 	}
 }
