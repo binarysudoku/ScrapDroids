@@ -27,14 +27,18 @@ public class FlameThrower : Weapon {
 			Instantiate (emptyFX, muzzleFlashSocket.position, muzzleFlashSocket.rotation * Quaternion.Euler(0,-90,0), null);
 			isEmpty = true;
 		}
+
+		if (!isFiring) {
+			spinUp = 0f;
+		}
 	}
 
 	public override void Fire() {
 		if (currentCoolDown <= 0) {
 			if (ammo > 0) {
 				ammo -= 1;
-
-				if (spinUp < 0.5) {
+				spinUp += 0.1f;
+				if (spinUp < 1) {
 					Instantiate(oilMuzzleFX, muzzleFlashSocket.position, muzzleFlashSocket.rotation * Quaternion.Euler(0, -90, 0), null);
 					Instantiate(oilProjectile, muzzleFlashSocket.position, muzzleFlashSocket.rotation);
 				} else {

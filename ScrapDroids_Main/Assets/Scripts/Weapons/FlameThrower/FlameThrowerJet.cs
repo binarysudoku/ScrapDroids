@@ -8,13 +8,24 @@ public class FlameThrowerJet : Projectile {
 	public float lifeTime;
 	public float growthRate;
 
+	private float lifeCounter;
+
 	void Start () {
-		
+		gameObject.transform.localScale = startScale;
+
+		Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+		rb.AddForce(gameObject.transform.forward * Random.Range(50000,100000) );
+
+		lifeCounter = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		startScale += Vector3.one*growthRate;
-		lifeTime += 0.1;
+		gameObject.transform.localScale += Vector3.one*growthRate;
+		lifeCounter += 0.1f;
+
+		if (lifeCounter > lifeTime) {
+			Destroy (gameObject);
+		}
 	}
 }
