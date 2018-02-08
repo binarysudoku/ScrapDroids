@@ -12,7 +12,9 @@ public class FlameThrowerOil : Projectile {
 
 	public Vector3 poolSize;
 	public float burnTime;
+	public float lifeTime;
 
+	private float lifeCounter;
 	private float burnCounter;
 	private GameObject fireObject;
 
