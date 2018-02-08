@@ -14,7 +14,9 @@
       <File FileName="Assets\Scripts\DamageModule.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\Chaser\EnemyChaser.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\FlameThrower\FlameThrowerJet.cs" Line="23" Column="25" />
+      <File FileName="Assets\Scripts\Weapons\FlameThrower\FlameThrowerJet.cs" Line="17" Column="75" />
+      <File FileName="Assets\Scripts\Weapons\FlameThrower\FlameThrower.cs" Line="20" Column="17" />
+      <File FileName="Assets\Scripts\Weapons\FlameThrower\FlameThrowerOil.cs" Line="22" Column="53" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
