@@ -15,7 +15,7 @@ public class FlameThrowerOil : Projectile {
 	public float lifeTime;
 
 	private float lifeCounter;
-	private float burnCounter;
+	public float burnCounter;
 	private GameObject fireObject;
 
 	void Start() {
@@ -28,23 +28,16 @@ public class FlameThrowerOil : Projectile {
 
 	// Update is called once per frame
 	void Update() {
-		if (burnCounter <= 0 & burnCounter != -1) {
-			Destroy(fireObject);
-			Destroy(gameObject);
-		}
-	}
-
-	/*
-	private void OnTriggerStay(Collider other) {
-
-		if (other.GetComponent<DamageModule>() != null) {
-			if (other.GetComponent<DamageModule>().team != 0) {
-				other.GetComponent<DamageModule>().TakeDamage("Fire", damage);
+		if (burnCounter != -1) {
+			if (burnCounter <= 0) {
+				Destroy(fireObject);
+				Destroy(gameObject);
+			} else {
+				burnCounter -= 0.01f;
 			}
 		}
 	}
-	*/
-	
+
 	void OnCollisionEnter(Collision col) {
 		pool.localScale = poolSize;
 		Debug.Log(col.gameObject);
@@ -52,6 +45,6 @@ public class FlameThrowerOil : Projectile {
 
 	public void Burn() {
 		burnCounter = burnTime;
-		fireObject = Instantiate(burningFX, gameObject.transform, false);
+		fireObject = Instantiate(burningFX, gameObject.transform.position , Quaternion.identity, gameObject.transform);
 	}
 }

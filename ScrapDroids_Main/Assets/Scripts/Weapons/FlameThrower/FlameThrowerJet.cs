@@ -14,7 +14,7 @@ public class FlameThrowerJet : Projectile {
 		gameObject.transform.localScale = startScale;
 
 		Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-		rb.AddForce(gameObject.transform.forward * Random.Range(50000,100000) );
+		rb.AddForce(gameObject.transform.forward * Random.Range(80000,200000) );
 
 		lifeCounter = 0;
 	}
@@ -26,6 +26,14 @@ public class FlameThrowerJet : Projectile {
 
 		if (lifeCounter > lifeTime) {
 			Destroy (gameObject);
+		}
+	}
+
+	void OnTriggerEnter(Collider col) {
+		DamageModule dmgmodule = col.transform.root.GetComponent<DamageModule>();
+
+		if (dmgmodule != null) {
+			dmgmodule.TakeDamage("Generic", damage);
 		}
 	}
 }

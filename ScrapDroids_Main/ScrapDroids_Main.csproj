@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\Weapons\FlameThrower\FlameThrower.cs" />
     <Compile Include="Assets\Scripts\Weapons\FlameThrower\FlameThrowerJet.cs" />
     <Compile Include="Assets\Scripts\Weapons\FlameThrower\FlameThrowerOil.cs" />
+    <Compile Include="Assets\Scripts\Weapons\FlameThrower\OilBurnDetector.cs" />
     <Compile Include="Assets\Scripts\Weapons\Projectile.cs" />
     <Compile Include="Assets\Scripts\Weapons\TestBlaster\TestBlaster.cs" />
     <Compile Include="Assets\Scripts\Weapons\TestBlaster\TestBlasterBolt.cs" />
